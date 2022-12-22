@@ -1,0 +1,11 @@
+1、导入时须先确认数据库中已有相关表结构，若无表结构就先使用Django的命令创建：
+	如果你之前还未创建表结构，可使用以下命令创建：
+	$ python manage.py makemigrations  # 让 Django 知道我们在我们的模型有一些变更
+	$ python manage.py migrate   # 创建表结构
+
+2、表结构创建完成后首先导入movie_collectmoviedb.sql的数据，否则其他关联的数据将无法导入。
+3、之后再将其余表逐个导入即可。
+
+注意：表结构.sql，只有为创建本文件夹内的几张表，若已使用Django创建表，则无需再使用该文件。
+
+testest

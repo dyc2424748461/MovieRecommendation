@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c34968e5-865f-4b1a-8f54-e7e2a2ce89f3" name="Default Changelist" comment="Default Changelist">
-      <change afterPath="$PROJECT_DIR$/sql/movie_collectmoviedb.sql" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/sql/movie_movietagdb.sql" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/sql/other_sql.sql" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/sql/数据导入注意事项.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/sql/表结构.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/BiSheServer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/BiSheServer.iml" afterDir="false" />
     </list>
     <list id="b363f1bc-7d59-4887-9050-8bf4586c6152" name="Ignore changelist" comment="Ignore changelist" />
     <option name="SHOW_DIALOG" value="false" />
@@ -269,7 +270,7 @@
       <workItem from="1671435038817" duration="1137000" />
       <workItem from="1671515457832" duration="1521000" />
       <workItem from="1671585749814" duration="5532000" />
-      <workItem from="1671715669972" duration="1775000" />
+      <workItem from="1671715669972" duration="2105000" />
     </task>
     <task id="LOCAL-00001" summary="第一次提交">
       <created>1616917500894</created>
@@ -306,7 +307,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671718033978</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Default Changelist">
+      <created>1671718186425</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1671718186425</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
