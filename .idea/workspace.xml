@@ -1,14 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c34968e5-865f-4b1a-8f54-e7e2a2ce89f3" name="Default Changelist" comment="" />
+    <list default="true" id="c34968e5-865f-4b1a-8f54-e7e2a2ce89f3" name="Default Changelist" comment="Default Changelist">
+      <change afterPath="$PROJECT_DIR$/sql/movie_collectmoviedb.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sql/movie_movietagdb.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sql/other_sql.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sql/数据导入注意事项.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sql/表结构.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/BiSheServer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/BiSheServer.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/bb7bcc88-c93a-40e6-86ba-582d05724c23.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/bb7bcc88-c93a-40e6-86ba-582d05724c23.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/conf.ini" beforeDir="false" afterPath="$PROJECT_DIR$/config/conf.ini" afterDir="false" />
+    </list>
     <list id="b363f1bc-7d59-4887-9050-8bf4586c6152" name="Ignore changelist" comment="Ignore changelist" />
-    <ignored path="config/conf.ini" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -26,9 +39,6 @@
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
@@ -56,12 +66,19 @@
       </list>
     </option>
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="16" />
     <option name="y" value="46" />
     <option name="width" value="2800" />
     <option name="height" value="1760" />
   </component>
+  <component name="ProjectId" id="2J7hTZMeCs69YIx4eTmnxbOURNk" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -97,33 +114,57 @@
       <pane id="Scope" />
     </panes>
   </component>
-  <component name="PropertiesComponent">
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/page" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
   </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/coding/python/MovieRecommendation&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ],
+    &quot;RunConfigurationTargetLRU&quot;: [
+      &quot;58b27eb6-8325-491e-b40e-dfb3809bb082&quot;
+    ]
+  }
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\coding\python\MovieRecommendation" />
       <recent name="D:\a189a\IDE\BiSheServer\templates\page" />
       <recent name="D:\a189a\IDE\BiSheServer" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Django server.BiSheServer">
+  <component name="RunManager" selected="数据库脚本.other_sql.sql">
+    <configuration name="movie_collectmoviedb.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+      <script-file value="$PROJECT_DIR$/sql/movie_collectmoviedb.sql" />
+      <script-mode>FILE</script-mode>
+      <data-source id="58b27eb6-8325-491e-b40e-dfb3809bb082" />
+      <method v="2" />
+    </configuration>
+    <configuration name="movie_movietagdb.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+      <script-file value="$PROJECT_DIR$/sql/movie_movietagdb.sql" />
+      <script-mode>FILE</script-mode>
+      <data-source id="58b27eb6-8325-491e-b40e-dfb3809bb082" />
+      <method v="2" />
+    </configuration>
+    <configuration name="other_sql.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+      <script-file value="$PROJECT_DIR$/sql/other_sql.sql" />
+      <script-mode>FILE</script-mode>
+      <data-source id="58b27eb6-8325-491e-b40e-dfb3809bb082" />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -193,15 +234,22 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Django server.BiSheServer" />
+      <item itemvalue="Django 服务器.BiSheServer" />
       <item itemvalue="Python.models" />
+      <item itemvalue="数据库脚本.movie_collectmoviedb.sql" />
+      <item itemvalue="数据库脚本.movie_movietagdb.sql" />
+      <item itemvalue="数据库脚本.other_sql.sql" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="数据库脚本.other_sql.sql" />
+        <item itemvalue="数据库脚本.movie_movietagdb.sql" />
+        <item itemvalue="数据库脚本.movie_collectmoviedb.sql" />
         <item itemvalue="Python.models" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -223,6 +271,10 @@
       <workItem from="1616919735605" duration="898000" />
       <workItem from="1616923174250" duration="625000" />
       <workItem from="1616923876650" duration="51000" />
+      <workItem from="1671435038817" duration="1137000" />
+      <workItem from="1671515457832" duration="1521000" />
+      <workItem from="1671585749814" duration="5532000" />
+      <workItem from="1671715669972" duration="1380000" />
     </task>
     <task id="LOCAL-00001" summary="第一次提交">
       <created>1616917500894</created>
@@ -297,7 +349,7 @@
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.History.Properties">
     <option name="COLUMN_ORDER">
@@ -314,22 +366,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -359,7 +396,7 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/db.sqlite3" />
-    <entry file="file://D:/app/Python/Python37/Lib/site-packages/pymysql/__init__.py">
+    <entry file="file://$PROJECT_DIR$/../../../app/Python/Python37/Lib/site-packages/pymysql/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/manage.py" />
