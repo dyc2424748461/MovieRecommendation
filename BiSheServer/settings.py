@@ -344,6 +344,11 @@ LOGGING = {
             'level': 'INFO',
             'propagate': False
         },
+        'test': {
+            'handlers': ['console', 'default_debug'],
+            'level': 'DEBUG',
+            'propagate': False
+        },
         'django.request': {
             'handlers': ['request_handler'],
             'level': 'INFO',

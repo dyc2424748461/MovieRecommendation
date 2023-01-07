@@ -1,4 +1,5 @@
 import datetime
+import logging
 import random
 from functools import reduce
 
@@ -16,7 +17,7 @@ from movie.models import CollectMovieTypeDB, CollectMovieDB, MovieLikes, MovieRa
 set_readis = Api().set_readis
 get_readis = Api().get_readis
 
-
+logger = logging.getLogger("test")
 class Movie:
 
     def __init__(self):
@@ -143,12 +144,13 @@ class Movie:
     def emoution(sentece):
         sent = SnowNLP(sentece)
         predict = sent.sentiments * 100
+        logger.debug("评论情感")
         return predict
 
     # 获取用户收藏的指定电影
     @staticmethod
     def get_user_movie_like(user_id, movie_id, is_list=0):
-
+        logger.debug("获取用户收藏的电影")
         user_movie_like_rs = MovieLikes.objects.order_by("-like_time").filter(Q(user_id=user_id) &
                                                                               Q(movie_id=movie_id) & Q(status=1)).all()
         if is_list:  # 若为1，则返回movie_id的结果集
@@ -174,7 +176,7 @@ class Movie:
     # 获取用户收藏的所有电影
     @staticmethod
     def get_user_like(user_id, is_list=0):
-
+        logger.debug("获取用户收藏的所有电影")
         user_like_rs = MovieLikes.objects.order_by("-like_time").filter(Q(user_id=user_id) & Q(status=1)).all()
         user_like_rs_json = list(user_like_rs.values_list("movie__movie_id", flat=True))
         if not is_list:  # 若为0，则返回所有电影信息，否则返回movie_id的结果集
@@ -197,7 +199,8 @@ class Movie:
     # 获取某一部电影的所有评论
     @staticmethod
     def get_movie_comment(movie_id, is_list=0):
-
+        logger.debug(str(movie_id)+":获取某一部电影的所有评论")
+        logger.warning("warning")
         movie_comment_rs = MovieComments.objects.order_by("comment_time").filter(Q(movie_id=movie_id) &
                                                                                  Q(status=1)).all()
         if is_list:  # 若为1，则返回id的结果集
@@ -209,7 +212,7 @@ class Movie:
     # 获取用户的所有评论
     @staticmethod
     def get_user_comment(user_id, is_list=0):
-
+        logger.debug("获取用户的所有评论")
         movie_comment_rs = MovieComments.objects.order_by("-comment_time").filter(Q(user_id=user_id) &
                                                                                   Q(status=1)).all()
         if is_list:  # 若为1，则返回id的结果集
@@ -242,7 +245,7 @@ class Movie:
     # 获取用户的所有浏览记录
     @staticmethod
     def get_user_movie_brow(user_id):
-
+        logger.debug("获取用户所有浏览记录")
         user_movie_brow_rs = MovieBrows.objects.order_by("-brow_time").filter(user_id=user_id).all()
         user_movie_brow_rs_json = queryset_to_json(user_movie_brow_rs)
         return user_movie_brow_rs_json
@@ -312,13 +315,14 @@ class Movie:
     def get_tag_movie(tag_type, tag_name):
         # tag_movie_rs = MovieTagDB.objects.filter(tag_type=tag_type, tag_name=tag_name)\
         #     .order_by("-moviepubdatedb__pubdate", "-movieratingdb__rating").all()
+        logger.debug("获取指定标签的电影")
         tag_movie_rs = MovieTagDB.objects.filter(tag_type=tag_type, tag_name=tag_name).all()
         tag_movie_rs_list = list(tag_movie_rs.values_list("movie_id", flat=True))
         return tag_movie_rs_list
 
     # 获取根据类别获取主页显示推荐的电影
     def get_index_tag_movie(self, tag_name, user_id, num=5):
-
+        logger.debug("获取根据类别获取主页显示推荐电影")
         index_tag_movie_rs_json = get_readis("index_movie_tag"+"_"+str(tag_name)+"_"+str(user_id)+"_"+str(num))
         if index_tag_movie_rs_json:
             return index_tag_movie_rs_json
@@ -372,6 +376,8 @@ class Movie:
     # 爬取豆瓣的信息
     @staticmethod
     def movie_search_by_web(movie_id):
+
+        logger.debug("爬取豆瓣的信息")
         if not movie_id:
             return {}
 
@@ -492,7 +498,7 @@ class Movie:
 
     # 根据电影推荐电影（电影详情页中）
     def get_movie_5_cai(self, movie_id):
-
+        logger.debug("根据电影推荐电影")
         movie_tag_cai_rs_json = get_readis("movie_tag_cai" + "_" + str(movie_id) + "_" + str(5))
         if movie_tag_cai_rs_json:
             return movie_tag_cai_rs_json
@@ -505,12 +511,12 @@ class Movie:
 
         # 设置10分钟缓存不变
         set_readis("movie_tag_cai" + "_" + str(movie_id) + "_" + str(5), movie_cai_rs_json, set_time=60 * 10)
-
+        logger.debug("设置10分钟缓存不变")
         return movie_cai_rs_json
 
     # 获取系统推荐的5部电影（历史记录中，猜你喜欢） 应使用Spark中spark.py最后获取的结果
     def get_user_movie_5_cai(self, user_id):
-
+        logger.debug("猜你喜欢")
         user_movie_tag_cai_rs_json = get_readis("user_tag_cai" + "_" + str(user_id) + "_" + str(5))
         if user_movie_tag_cai_rs_json:
             return user_movie_tag_cai_rs_json
