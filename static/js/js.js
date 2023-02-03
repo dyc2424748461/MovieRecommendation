@@ -235,9 +235,9 @@ function movie_show(show_movie_data, show_movie_id) {
         if(countries) {
             movie_search_show_text = movie_search_show_text + '<span class="qb">' + countries + '</span>';
         }
-        if(tag) {
-            movie_search_show_text = movie_search_show_text + '<span class="furk">' + tag + '</span>';
-        }
+        // if(tag) {
+        //     movie_search_show_text = movie_search_show_text + '<span class="furk">' + tag + '</span>';
+        // }
         movie_search_show_text = movie_search_show_text + '</div>';
         if(rating) {
             movie_search_show_text = movie_search_show_text + '<div class="rating">' + rating + '</div>';
