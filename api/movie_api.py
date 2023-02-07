@@ -13,7 +13,7 @@ from user.models import UserTag, UserMovieRecommend
 from .api import Api
 from api.model_json import queryset_to_json
 from movie.models import CollectMovieTypeDB, CollectMovieDB, MovieLikes, MovieRatings, MovieComments, MovieSearchs, \
-    MovieBrows, MovieRatingDB, MoviePubdateDB, MovieTagDB
+    MovieBrows, CollectTop250MovieDB,MovieRatingDB, MoviePubdateDB, MovieTagDB
 set_readis = Api().set_readis
 get_readis = Api().get_readis
 
@@ -285,8 +285,8 @@ class Movie:
         visiter_movie_5_like_rs_json = visiter_movie_5_brow_rs
         return visiter_movie_5_like_rs_json
 
-    # 获取最新的5部电影
-    def get_movie_douban_new(self, page=1, num=5):
+    # 获取最新上映的5部电影
+    def get_movie_douban_new(self, page=1, num=10):
 
         movie_douban_new_rs_json = get_readis("movie_new"+"_"+str(page)+"_"+str(num))
         if movie_douban_new_rs_json:
@@ -296,6 +296,9 @@ class Movie:
                                                                                  .strftime('%Y-%m-%d')).all()
         movie_douban_new_rs_list = list(movie_douban_new_rs.values_list("movie_id", flat=True)
                                         [(int(page) - 1) * int(num):int(page) * int(num)])
+        #随机选择最新上映的电影
+        movie_douban_new_rs_list = random.sample(movie_douban_new_rs_list,5)
+        logger.debug('豆瓣最新电影'+'\n'+str(movie_douban_new_rs_list))
         # 去重
         # movie_douban_new_rs_list = reduce(lambda x, y: x if y in x else x + [y], [[], ] + movie_douban_new_rs_list)
         # movie_search_rs = CollectMovieDB.objects.filter(movie_id__in=user_movie_5_brow_rs_list[:5]).all()
@@ -317,7 +320,9 @@ class Movie:
         #     .order_by("-moviepubdatedb__pubdate", "-movieratingdb__rating").all()
         logger.debug("获取指定标签的电影")
         tag_movie_rs = MovieTagDB.objects.filter(tag_type=tag_type, tag_name=tag_name).all()
+        logger.debug(tag_movie_rs)
         tag_movie_rs_list = list(tag_movie_rs.values_list("movie_id", flat=True))
+        logger.debug(tag_movie_rs_list)
         return tag_movie_rs_list
 
     # 获取根据类别获取主页显示推荐的电影
@@ -328,6 +333,7 @@ class Movie:
             return index_tag_movie_rs_json
 
         index_tag_movie_rs_list = self.get_tag_movie('tag', tag_name)
+        logger.debug("tag_name"+tag_name)
         # 去重
         # index_tag_movie_rs_list = reduce(lambda x, y: x if y in x else x + [y], [[], ] +
         #                                  index_tag_movie_rs_list)[:num]
@@ -344,9 +350,34 @@ class Movie:
         index_tag_movie_rs_json = index_tag_movie_rs
         # 设置10分钟缓存不变
         set_readis("index_movie_tag"+"_"+str(tag_name)+"_"+str(user_id)+"_"+str(num), index_tag_movie_rs_json,
-                   set_time=60 * 10)
+                   set_time= 60*10)
 
         return index_tag_movie_rs_json
+
+    # # 获取豆瓣高分10部电影
+    # def get_movie_douban_top(self, page=1, num=10):
+    #
+    #     movie_douban_top_rs_json = get_readis("movie_top"+"_"+str(page)+"_"+str(num))
+    #     if movie_douban_top_rs_json:
+    #         return movie_douban_top_rs_json
+    #
+    #     movie_douban_top_rs = MovieRatingDB.objects.order_by("-rating").all()
+    #     movie_douban_top_rs_list = list(movie_douban_top_rs.values_list("movie_id", flat=True)
+    #                                     [(int(page) - 1) * int(num):int(page) * int(num)])
+    #     # 去重
+    #     # movie_douban_top_rs_list = reduce(lambda x, y: x if y in x else x + [y], [[], ] +
+    #     #                                   movie_douban_top_rs_list)[:num]
+    #     # movie_search_rs = CollectMovieDB.objects.filter(movie_id__in=user_movie_5_brow_rs_list[:5]).all()
+    #     # movie_search_rs_json = queryset_to_json(movie_search_rs)
+    #     movie_douban_top_rs = []
+    #     for movie_id in movie_douban_top_rs_list:
+    #         movie_douban_top_rs.append(self.movie_search_by_id(movie_id))
+    #     # movie_search_rs_json = serializers.serialize('json', user_movie_5_brow_rs)
+    #     movie_douban_top_rs_json = movie_douban_top_rs
+    #
+    #     set_readis("movie_top"+"_"+str(page)+"_"+str(num), movie_douban_top_rs_json)
+    #
+    #     return movie_douban_top_rs_json
 
     # 获取豆瓣高分10部电影
     def get_movie_douban_top(self, page=1, num=10):
@@ -355,9 +386,12 @@ class Movie:
         if movie_douban_top_rs_json:
             return movie_douban_top_rs_json
 
-        movie_douban_top_rs = MovieRatingDB.objects.order_by("-rating").all()
-        movie_douban_top_rs_list = list(movie_douban_top_rs.values_list("movie_id", flat=True)
-                                        [(int(page) - 1) * int(num):int(page) * int(num)])
+        # movie_douban_top_rs = MovieRatingDB.objects.order_by("-rating").all()
+        movie_douban_top_rs = CollectTop250MovieDB.objects.all()
+        # movie_douban_top_rs_list = list(movie_douban_top_rs.values_list("movie_id", flat=True)
+        #                                 [(int(page) - 1) * int(num):int(page) * int(num)])
+        movie_douban_top_rs_list = list(movie_douban_top_rs.values_list('movie_id',flat=True))
+        movie_douban_top_rs_list = random.sample(movie_douban_top_rs_list,num)
         # 去重
         # movie_douban_top_rs_list = reduce(lambda x, y: x if y in x else x + [y], [[], ] +
         #                                   movie_douban_top_rs_list)[:num]
@@ -368,8 +402,8 @@ class Movie:
             movie_douban_top_rs.append(self.movie_search_by_id(movie_id))
         # movie_search_rs_json = serializers.serialize('json', user_movie_5_brow_rs)
         movie_douban_top_rs_json = movie_douban_top_rs
-
-        set_readis("movie_top"+"_"+str(page)+"_"+str(num), movie_douban_top_rs_json)
+        # 设置缓存为10分钟
+        set_readis("movie_top"+"_"+str(page)+"_"+str(num), movie_douban_top_rs_json,set_time= 60 * 10)
 
         return movie_douban_top_rs_json
 
@@ -510,7 +544,7 @@ class Movie:
         movie_cai_rs_json = queryset_to_json(movie_cai_rs)
 
         # 设置10分钟缓存不变
-        set_readis("movie_tag_cai" + "_" + str(movie_id) + "_" + str(5), movie_cai_rs_json, set_time=60 * 10)
+        set_readis("movie_tag_cai" + "_" + str(movie_id) + "_" + str(5), movie_cai_rs_json, set_time= 60*10)
         logger.debug("设置10分钟缓存不变")
         return movie_cai_rs_json
 
@@ -541,6 +575,6 @@ class Movie:
         user_movie_tag_cai_rs_json = queryset_to_json(user_movie_tag_cai_rs)
 
         # 设置10分钟缓存不变
-        set_readis("user_tag_cai" + "_" + str(user_id) + "_" + str(5), user_movie_tag_cai_rs_json, set_time=60 * 10)
+        set_readis("user_tag_cai" + "_" + str(user_id) + "_" + str(5), user_movie_tag_cai_rs_json, set_time=60*10)
 
         return user_movie_tag_cai_rs_json
