@@ -14,6 +14,7 @@ from .api import Api
 from api.model_json import queryset_to_json
 from movie.models import CollectMovieTypeDB, CollectMovieDB, MovieLikes, MovieRatings, MovieComments, MovieSearchs, \
     MovieBrows, CollectTop250MovieDB,MovieRatingDB, MoviePubdateDB, MovieTagDB
+from recommendedAlgorithm.ContentBased.production.content_based import ContentBase
 set_readis = Api().set_readis
 get_readis = Api().get_readis
 
@@ -578,3 +579,10 @@ class Movie:
         set_readis("user_tag_cai" + "_" + str(user_id) + "_" + str(5), user_movie_tag_cai_rs_json, set_time=60*10)
 
         return user_movie_tag_cai_rs_json
+
+    # 基于内容的推荐
+    def get_user_movie_content_base(self,user_id):
+        content_base_rs_list=ContentBase(user_id).run_main()[user_id] # 有待更改
+        movie_content_base_rs = CollectMovieDB.objects.filter(movie_id__in=content_base_rs_list).all()
+        movie_content_base_rs_json = queryset_to_json(movie_content_base_rs)
+        return movie_content_base_rs_json
