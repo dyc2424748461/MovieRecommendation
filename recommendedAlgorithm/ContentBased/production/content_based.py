@@ -30,6 +30,11 @@ class ContentBase:
         # data = MovieBrows.objects.values_list('user_id','movie_id','brow_time')[:last_brows:-1]
         data = MovieBrows.objects.all().values_list('user_id','movie_id','brow_time').order_by('-brow_time').filter(user_id=self.user_id)
         data = data[:last_brows:]
+        if not data.exists():
+            now = datetime.datetime.now()
+            data = [[self.user_id,1292052,now,],
+                    [self.user_id,1293182,now,],
+                    [self.user_id,1298624,now,]]
         max_time = data[0][2]
 
         record={}

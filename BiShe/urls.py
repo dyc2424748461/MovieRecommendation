@@ -33,5 +33,6 @@ urlpatterns = [
     path('modifyEmail.html', views.modify_email),    # 修改邮箱
     path('userCollection.html', views.user_collection),    # 收藏管理
     path('userComment.html', views.user_comment),    # 评论管理
+    path('content_base',views.content_base)
 
 ]

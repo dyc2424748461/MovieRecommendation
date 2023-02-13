@@ -28,7 +28,8 @@
                 </div>
                 <div class="mi_btcon">
                     <div class="bt_tit mi_ne_kd">
-                        <h2><a href="javascript:void(0);">猜你喜欢</a><i class="fa"></i></h2>
+                        <h2 style="display: inline"><a href="javascript:void(0);">猜你喜欢</a><i class="fa"></i></h2>
+                        <button id="huanyihuan" class="moreb" style="color: #00b2c2">换一换<i class="el-icon-d-arrow-right"></i></button>
 {#                        <a target="_blank" href="/search.html?type=new" class="moreb">更多<i class="el-icon-d-arrow-right"></i></a>#}
                     </div>
                     <div class="bt_img mi_ne_kd leibox" id="movie_test">
@@ -39,7 +40,7 @@
                     <div class="mi_btcon">
                         <div class="bt_tit mi_ne_kd">
                             	<h2><a href="javascript:void(0);">{{ tag.tag }}</a><i class="fa"></i></h2>
-                    	<a target="_blank" href="/search.html?type=geners&s={{ tag.tag }}" class="moreb">更多<i class="el-icon-d-arrow-right"></i></a>
+                    	<a target="_blank" href="/search.html?type=genres&s={{ tag.tag }}" class="moreb">更多<i class="el-icon-d-arrow-right"></i></a>
                         </div>
                         <div class="bt_img mi_ne_kd leibox" id="movie_index_tag_{{ forloop.counter }}">
 
@@ -66,6 +67,25 @@
             movie_show(movie_douban_top,"movie_douban_top");
             movie_show(movie_test,'movie_test')
         </script>
+{#        <script type="text/javascript">#}
+{#            const btn = document.getElementById('huanyihuan')#}
+{#            btn.onclick = function(){#}
+{#                console.log('test');#}
+{#                const xhr = new XMLHttpRequest();#}
+{#                xhr.responseType='json';#}
+{#                xhr.open('GET','http://127.0.0.1:8001/content_base');#}
+{#                xhr.send();#}
+{#                xhr.onreadystatechange = function(){#}
+{#                    if (xhr.status >= 200 && xhr.status < 300) {#}
+                        {#console.log(xhr.response);#}
+{#                        var data = xhr.response#}
+{#                        if(!!data){#}
+{#                            movie_show(xhr.response,'movie_test');#}
+{#                        }#}
+{#                    }#}
+{#                }#}
+{#            }#}
+{#        </script>#}
         {% include "include/footer.html" %}
     </body>
 
