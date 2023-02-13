@@ -67,25 +67,25 @@
             movie_show(movie_douban_top,"movie_douban_top");
             movie_show(movie_test,'movie_test')
         </script>
-{#        <script type="text/javascript">#}
-{#            const btn = document.getElementById('huanyihuan')#}
-{#            btn.onclick = function(){#}
-{#                console.log('test');#}
-{#                const xhr = new XMLHttpRequest();#}
-{#                xhr.responseType='json';#}
-{#                xhr.open('GET','http://127.0.0.1:8001/content_base');#}
-{#                xhr.send();#}
-{#                xhr.onreadystatechange = function(){#}
-{#                    if (xhr.status >= 200 && xhr.status < 300) {#}
-                        {#console.log(xhr.response);#}
-{#                        var data = xhr.response#}
-{#                        if(!!data){#}
-{#                            movie_show(xhr.response,'movie_test');#}
-{#                        }#}
-{#                    }#}
-{#                }#}
-{#            }#}
-{#        </script>#}
+        <script type="text/javascript">
+            const btn = document.getElementById('huanyihuan')
+            btn.onclick = function(){
+                console.log('test');
+                const xhr = new XMLHttpRequest();
+                xhr.responseType='json';
+                xhr.open('GET','http://127.0.0.1:8001/content_base');
+                xhr.send();
+                xhr.onreadystatechange = function(){
+                    if (xhr.status >= 200 && xhr.status < 300) {
+                        console.log(xhr.response);
+                        var data = xhr.response
+                        if(!!data){
+                            movie_show(xhr.response,'movie_test');
+                        }
+                    }
+                }
+            }
+        </script>
         {% include "include/footer.html" %}
     </body>
 
