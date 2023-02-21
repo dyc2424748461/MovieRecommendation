@@ -1,3 +1,4 @@
+# encoding:utf-8
 import ast
 import collections
 import datetime
@@ -21,7 +22,7 @@ from pyspark.sql.functions import col
 class Calculator:
     def __init__(self):
         self.localClusterURL = "local[2]"
-        self.clusterMasterURL = "spark://master:7077"
+        self.clusterMasterURL = "spark://192.168.170.129:7077"
         self.conf = SparkConf().setAppName('Movie_System').setMaster(self.clusterMasterURL)
         self.sc = SparkContext.getOrCreate(self.conf)
         self.sqlContext = SQLContext(self.sc)
@@ -29,10 +30,10 @@ class Calculator:
         # self.sqlContext = SparkSession.Builder().appName('sql').master('spark://Spark:7077').getOrCreate()
 
         # mysql 配置
-        self.prop = {'user': '127_0_0_1',
-                     'password': 'RjHysK3TfjSdGwmJ',
+        self.prop = {'user': 'root',
+                     'password': 'root',
                      'driver': 'com.mysql.cj.jdbc.Driver'}
-        self.jdbcURL = "jdbc:mysql://172.19.107.58:3306/127_0_0_1" \
+        self.jdbcURL = "jdbc:mysql://192.168.1.106:3306/sql_bs" \
                        "?useUnicode=true&characterEncoding=utf-8&useSSL=false"
 
         #  user\rating\links\tags在hdfs中的位置 ===> 即推荐原料在hdfs中的存档路径
@@ -77,7 +78,7 @@ class Calculator:
         data = self.select(sql)
         self.write(data, path)
 
-    # 根据电影类型、语言、国家、年份计算相似度
+    # 根据电影类型、导演、国家、演员计算相似度
     def calculator_movie_type(self, read_path, write_path):
         dfMovies = self.get_data(read_path)
         dfMovies.show()
@@ -217,7 +218,7 @@ class Calculator:
         path1 = self.hdfs_data_path + 'user_tag_base_'+self.date_time
         self.change_sql_data_to_hdfs(sql1, path1)
         # 测试时限制数量防止计算量过大
-        sql2 = '(SELECT `movie_id`,`title`,`rating`,`genres`,`countries`,`languages`,`year` FROM ' \
+        sql2 = '(SELECT `movie_id`,`title`,`rating`,`genres`,`countries`,`actor_name`,`directors_name` FROM ' \
                'movie_collectmoviedb limit 0,1000) movie_base'
         path2 = self.hdfs_data_path + 'movie_base_'+self.date_time
         self.change_sql_data_to_hdfs(sql2, path2)
@@ -286,15 +287,15 @@ def countSimBetweenTwoMovie(list1, list2):
     movie_type_list2 = ast.literal_eval(list2['genres'])
     movie_country_list1 = ast.literal_eval(list1['countries'])
     movie_country_list2 = ast.literal_eval(list2['countries'])
-    movie_language_list1 = ast.literal_eval(list1['languages'])
-    movie_language_list2 = ast.literal_eval(list2['languages'])
-    movie_year1 = list1['year']
-    movie_year2 = list2['year']
-    movie_year = 1 if movie_year1 == movie_year2 else 0
+    movie_actor_list1 = ast.literal_eval(list1['actor_name'])
+    movie_actor_list2 = ast.literal_eval(list2['actor_name'])
+    movie_director1 = ast.literal_eval(list1['directors_name'])
+    movie_director2 = ast.literal_eval(list2['directors_name'])
+    movie_director = 1 if movie_director1 == movie_director2 else 0
     movie_type = countSimBetweenTwoList(movie_type_list1, movie_type_list2)
     movie_country = countSimBetweenTwoList(movie_country_list1, movie_country_list2)
-    movie_language = countSimBetweenTwoList(movie_language_list1, movie_language_list2)
-    sim = (movie_type * 5 + movie_country * 2 + movie_language * 2 + movie_year * 1) / 10
+    movie_actor = countSimBetweenTwoList(movie_actor_list1, movie_actor_list2)
+    sim = (movie_type * 3 + movie_country * 2 + movie_actor * 3 + movie_director * 2) / 10
     return sim
 
 

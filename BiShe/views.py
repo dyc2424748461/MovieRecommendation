@@ -5,11 +5,13 @@ from functools import wraps
 
 from django.contrib.auth import authenticate, login
 from django.shortcuts import render
+from django_extensions import logging
 
 from api import movie_api, user_api, api, delay_work
 from movie.models import MovieBrows
 
 from user.models import UsersBase, UsersDetail
+
 
 Movie = movie_api.Movie()
 User = user_api.User()
@@ -32,6 +34,7 @@ get_user_movie_brow = Movie.get_user_movie_brow
 get_user_movie_like = Movie.get_user_movie_like
 get_user_movie_5_like = Movie.get_user_movie_5_like
 get_user_movie_5_brow = Movie.get_user_movie_5_brow
+get_user_movie_content_base = Movie.get_user_movie_content_base #
 get_movie_5_cai = Movie.get_movie_5_cai
 get_user_movie_5_cai = Movie.get_user_movie_5_cai
 get_visiter_movie_5_brow = Movie.get_visiter_movie_5_brow
@@ -54,6 +57,7 @@ def index(request):
     data["movie_douban_top"] = get_movie_douban_top(1, 10)
     # 获取5个最新上映的电影
     data['movie_douban_new'] = get_movie_douban_new()
+    data['test'] = get_user_movie_content_base(user_id) # 测试
     data['movie_index_tag'] = [{"tag": "", "data": []} for _ in range(4)]
     if user_id == 2:
         data['movie_index_tag'] = data['movie_nav_tag']
@@ -294,3 +298,15 @@ def page_nav(request):
         rs["user_5_brow"] = get_visiter_movie_5_brow(request.COOKIES.get("uuid"))
         rs["user_5_cai"] = []
     return rs
+
+# 基于内容的推荐
+def content_base(request):
+    cookie_uuid = request.COOKIES.get("uuid")
+    user_id = request.session.get("user_id") if request.session.get("user_id") else 2
+    data = get_user_movie_content_base(user_id)
+    from django.shortcuts import HttpResponse
+    import json
+    print('user_id'+str(user_id))
+    response = HttpResponse(json.dumps(data))
+    return response
+# 基于lfm模型的推荐

@@ -2,11 +2,14 @@ import datetime
 # import time
 
 # from django.core.validators import MaxValueValidator, MinValueValidator
+import logging
+
 from django.db import models
 
 from api import model_json
 from user.models import UsersBase
 
+logger = logging.getLogger("test")
 
 # 电影类型表
 class CollectMovieTypeDB(models.Model):
@@ -70,8 +73,11 @@ class CollectMovieDB(models.Model):
     languages = models.CharField(max_length=1000, default='', verbose_name=u"语言")  # 语言
     writers = models.TextField(default='', verbose_name=u"作者")  # 作者
     actor = models.TextField(default='', verbose_name=u"演员")  # 演员
+    actor_name = models.TextField(default='',verbose_name=u"演员姓名列表")
     summary = models.TextField(default='', verbose_name=u"简介")  # 简介
     directors = models.TextField(default='', verbose_name=u"导演")  # 导演
+    directors_name = models.TextField(default='',verbose_name=u"导演姓名列表")
+    content_base = models.TextField(default='',verbose_name=u"Top的tags")
     record_time = models.DateTimeField(auto_now_add=True, verbose_name=u"录入时间")
 
     def __str__(self):
@@ -173,6 +179,7 @@ class MovieTagDB(models.Model):
 
 # 用户浏览记录表
 class MovieBrows(models.Model):
+    logger.debug("用户浏览记录")
     user = models.ForeignKey(UsersBase, verbose_name='用户', on_delete=models.CASCADE)
     movie = models.ForeignKey(CollectMovieDB, to_field="movie_id", verbose_name='电影', on_delete=models.CASCADE)
     cookie_uuid = models.CharField(max_length=100, blank=True, null=False, verbose_name='COOKIE_UUID')

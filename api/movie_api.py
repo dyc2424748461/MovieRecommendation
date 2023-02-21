@@ -9,6 +9,7 @@ from django.db.models import Q
 from snownlp import SnowNLP
 
 from api import delay_work
+from recommendedAlgorithm.LFM.production.train import LFM
 from user.models import UserTag, UserMovieRecommend
 from .api import Api
 from api.model_json import queryset_to_json
@@ -580,9 +581,17 @@ class Movie:
 
         return user_movie_tag_cai_rs_json
 
-    # 基于内容的推荐
+    # 基于内容的推荐 LFM 推荐
     def get_user_movie_content_base(self,user_id):
         content_base_rs_list=ContentBase(user_id).run_main()[user_id] # 有待更改
+        # 如果存在lfm的训练用户，则使用lfm
+        # if userid in ？：
+        lfm_rs_list = [ x[0] for x in LFM(user_id).model_train_process()]
+        if  lfm_rs_list:
+            c_list = random.sample(content_base_rs_list,3)
+            lfm_rs_list = list(set(lfm_rs_list)-(set(c_list)&set(lfm_rs_list)))
+            l_list = random.sample(lfm_rs_list,2)
+            content_base_rs_list=c_list+l_list
         movie_content_base_rs = CollectMovieDB.objects.filter(movie_id__in=content_base_rs_list).all()
         movie_content_base_rs_json = queryset_to_json(movie_content_base_rs)
         return movie_content_base_rs_json

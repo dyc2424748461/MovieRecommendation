@@ -5,15 +5,28 @@ import os
 import operator
 import ast
 import django
+import joblib
+
 django.setup()
 from movie.models import MovieRatingDB
 from movie.models import CollectMovieDB
+ab_path = os.path.dirname(__file__)
+ab_dir = os.path.normpath(ab_path)
+# var_dir = os.path.join(ab_path,)
+# os.makedirs(var_dir)
 def get_ave_score():
     '''
     得到item的平均评分
     :param input_file:
     :return: dict key:itemid  value:score
     '''
+    # print(os.path.abspath(__file__))
+    # path = os.path.join(var_dir,'ave_score.pkl')
+    # current_dir = os.path.dirname(__file__)
+    # current_dir = os.path.normpath(current_dir)
+    path = os.path.join(ab_dir,'ave_score.pkl')
+    if os.path.isfile(path):
+        return joblib.load(path)
     ave_score={}
     # if not os.path.exists(input_file):
     #     return{}
@@ -39,6 +52,8 @@ def get_ave_score():
     data=MovieRatingDB.objects.values('movie_id_id','rating')
     for line in data:
         ave_score[line['movie_id_id']] = float(line['rating'])
+    # print(os.path.abspath(__file__))
+    joblib.dump(ave_score,path)
     return ave_score
 
 def get_item_cate(ave_score):
@@ -51,6 +66,12 @@ def get_item_cate(ave_score):
     '''
     # 获取数据库中电影的信息
     data = CollectMovieDB.objects.values_list('movie_id','genres','content_base')
+    path1 = os.path.join(ab_dir,'item_cate.pkl')
+    path2 = os.path.join(ab_dir,'cate_item_sort.pkl')
+    b1 = os.path.isfile(path1)
+    b2 = os.path.isfile(path2)
+    if b1 & b2 :
+        return joblib.load(path1),joblib.load(path2)
     if not len(data):
         return {},{}
     linenum=0
@@ -82,6 +103,8 @@ def get_item_cate(ave_score):
             cate_item_sort[cate]=[]     #每个cate保存一个列表
         for instance in sorted(record[cate].items(),key=operator.itemgetter(1),reverse=True)[:topK]:
             cate_item_sort[cate].append(instance[0])
+    joblib.dump(item_cate,path1)
+    joblib.dump(cate_item_sort,path2)
     return item_cate,cate_item_sort
 
 
