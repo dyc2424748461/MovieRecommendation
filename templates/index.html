@@ -14,7 +14,8 @@
                 let movie_douban_top = {{ data.movie_douban_top|safe|default:"[]" }};
                 let movie_douban_new = {{ data.movie_douban_new|safe|default:"[]" }};
                 let movie_index_tag = {{ data.movie_index_tag|safe|default:"[]" }};
-                let movie_test = {{ data.test|safe|default:"[]" }}
+                let movie_test = {{ data.test|safe|default:"[]" }};
+                let movie_5_cai ={{ data.user_5_cai|safe|default:"[]" }};
             </script>
             <div class="mikd">
                 <div class="mi_btcon">
@@ -28,13 +29,21 @@
                 </div>
                 <div class="mi_btcon">
                     <div class="bt_tit mi_ne_kd">
+                        <h2 style="display: inline"><a href="javascript:void(0);">强烈为你推荐</a><i class="fa"></i></h2>
+                        {#                        <a target="_blank" href="/search.html?type=new" class="moreb">更多<i class="el-icon-d-arrow-right"></i></a>#}
+                    </div>
+                    {% if movie_5_cai == null %}
+                        <p style="text-align:center;color: red">暂不为游客提供推荐哦</p>
+                    {% endif %}
+                    <div class="bt_img mi_ne_kd leibox" id="movie_user_profile"></div>
+                </div>
+                <div class="mi_btcon">
+                    <div class="bt_tit mi_ne_kd">
                         <h2 style="display: inline"><a href="javascript:void(0);">猜你喜欢</a><i class="fa"></i></h2>
                         <button id="huanyihuan" class="moreb" style="color: #00b2c2">换一换<i class="el-icon-d-arrow-right"></i></button>
 {#                        <a target="_blank" href="/search.html?type=new" class="moreb">更多<i class="el-icon-d-arrow-right"></i></a>#}
                     </div>
-                    <div class="bt_img mi_ne_kd leibox" id="movie_test">
-
-                    </div>
+                    <div class="bt_img mi_ne_kd leibox" id="movie_test"></div>
                 </div>
                 {% for tag in data.movie_index_tag %}
                     <div class="mi_btcon">
@@ -66,6 +75,7 @@
             movie_show(movie_index_tag[3]["data"],"movie_index_tag_4");
             movie_show(movie_douban_top,"movie_douban_top");
             movie_show(movie_test,'movie_test')
+            movie_show(movie_5_cai,'movie_user_profile')
         </script>
         <script type="text/javascript">
             const btn = document.getElementById('huanyihuan')

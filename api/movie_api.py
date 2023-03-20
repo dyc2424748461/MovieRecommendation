@@ -1,6 +1,7 @@
 import datetime
 import logging
 import random
+import this
 from functools import reduce
 
 import requests
@@ -18,6 +19,7 @@ from movie.models import CollectMovieTypeDB, CollectMovieDB, MovieLikes, MovieRa
 from recommendedAlgorithm.ContentBased.production.content_based import ContentBase
 set_readis = Api().set_readis
 get_readis = Api().get_readis
+
 
 logger = logging.getLogger("test")
 class Movie:
@@ -558,10 +560,13 @@ class Movie:
             return user_movie_tag_cai_rs_json
 
         user_movie_recommend = UserMovieRecommend.objects.filter(user_id=user_id)
-        if not user_movie_recommend.exists():
-            return []
-        movie_id_li = user_movie_recommend.get(user_id=user_id).movie_id_li.split("，")
-        if len(movie_id_li) < 5:
+        # if not user_movie_recommend.exists():
+        #     return []
+        movie_len = 0
+        if user_movie_recommend.exists():
+            movie_id_li = user_movie_recommend.get(user_id=user_id).movie_id_li.split("，")
+            movie_len = len(movie_id_li)
+        if movie_len < 5 or not user_movie_recommend.exists():
             user_tag_li = UserTag.objects.filter(Q(tag_type="info_movie_type") & Q(user_id=user_id))\
                 .order_by("-tag_weight").values_list("tag_name", flat=True)
             if not user_tag_li:
@@ -581,7 +586,7 @@ class Movie:
 
         return user_movie_tag_cai_rs_json
 
-    # 基于内容的推荐 LFM 推荐
+    # 基于内容的推荐 +LFM 推荐
     def get_user_movie_content_base(self,user_id):
         content_base_rs_list=ContentBase(user_id).run_main()[user_id] # 有待更改
         # 如果存在lfm的训练用户，则使用lfm
