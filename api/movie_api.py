@@ -552,7 +552,7 @@ class Movie:
         logger.debug("设置10分钟缓存不变")
         return movie_cai_rs_json
 
-    # 获取系统推荐的5部电影（历史记录中，猜你喜欢） 应使用Spark中spark.py最后获取的结果
+    # 获取系统推荐的5部电影（历史记录中，猜你喜欢）
     def get_user_movie_5_cai(self, user_id):
         logger.debug("猜你喜欢")
         user_movie_tag_cai_rs_json = get_readis("user_tag_cai" + "_" + str(user_id) + "_" + str(5))
