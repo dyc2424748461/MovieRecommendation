@@ -589,6 +589,8 @@ class Movie:
     # 基于内容的推荐 +LFM 推荐
     def get_user_movie_content_base(self,user_id):
         content_base_rs_list=ContentBase(user_id).run_main()[user_id] # 有待更改
+        if content_base_rs_list is None:
+            content_base_rs_list=ContentBase(2).run_main()[2]
         # 如果存在lfm的训练用户，则使用lfm
         # if userid in ？：
         lfm_rs_list = [ x[0] for x in LFM(user_id).model_train_process()]
@@ -599,4 +601,5 @@ class Movie:
             content_base_rs_list=c_list+l_list
         movie_content_base_rs = CollectMovieDB.objects.filter(movie_id__in=content_base_rs_list).all()
         movie_content_base_rs_json = queryset_to_json(movie_content_base_rs)
+        # print(movie_content_base_rs_json)
         return movie_content_base_rs_json

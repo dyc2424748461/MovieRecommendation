@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b363f1bc-7d59-4887-9050-8bf4586c6152" name="Ignore changelist" comment="Ignore changelist">
+    <list default="true" id="b363f1bc-7d59-4887-9050-8bf4586c6152" name="Ignore changelist" comment="已更新至最新">
+      <change afterPath="$PROJECT_DIR$/recommendedAlgorithm/ContentBased/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/recommendedAlgorithm/LFM/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/recommendedAlgorithm/LFM/production/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/recommendedAlgorithm/LFM/utils_tool/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/recommendedAlgorithm/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/bb7bcc88-c93a-40e6-86ba-582d05724c23.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/bb7bcc88-c93a-40e6-86ba-582d05724c23.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BiShe/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/BiShe/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BiSheServer/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/BiSheServer/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/movie_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/movie_api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/conf.ini" beforeDir="false" afterPath="$PROJECT_DIR$/config/conf.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recommendedAlgorithm/ContentBased/production/content_based.py" beforeDir="false" afterPath="$PROJECT_DIR$/recommendedAlgorithm/ContentBased/production/content_based.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spark/spark.py" beforeDir="false" afterPath="$PROJECT_DIR$/spark/spark.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/icon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/icon.ico.bak" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +43,14 @@
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
@@ -54,6 +70,22 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="MIXED" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/BiShe/urls.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BiShe/views.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/api/delay_work.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/api/movie_api.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/api/urls.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/api/user_api.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/api/views.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/config/conf.ini" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/recommendedAlgorithm/ContentBased/production/content_based.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/recommendedAlgorithm/ContentBased/util/read.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/recommendedAlgorithm/LFM/data/ratings.csv" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/recommendedAlgorithm/LFM/production/train.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/recommendedAlgorithm/LFM/utils_tool/read.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/templates/index.html" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -122,49 +154,45 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;TODO_SCOPE&quot;: &quot;所有位置&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/coding/python/MovieRecommendation&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/coding/python/MovieRecommendation/static/images&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;project.structure.last.edited&quot;: &quot;SDK&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   },
   &quot;keyToStringList&quot;: {
     &quot;DatabaseDriversLRU&quot;: [
       &quot;mysql&quot;
     ],
     &quot;RunConfigurationTargetLRU&quot;: [
-      &quot;58b27eb6-8325-491e-b40e-dfb3809bb082&quot;
+      &quot;35e07f67-c4fe-40da-8fa6-6ccd66bb4280&quot;,
+      &quot;35e07f67-c4fe-40da-8fa6-6ccd66bb4280/schema/\&quot;sql_bs_more\&quot;&quot;,
+      &quot;af75b6cf-b407-4929-9c5c-21d027ce1a97/schema/\&quot;test\&quot;&quot;,
+      &quot;d505523d-3d22-4d93-9e90-fa6e11bcbefd/schema/\&quot;sql_bs_more\&quot;&quot;,
+      &quot;01cb31b8-13ba-4f58-98c8-2dc102103491/schema/\&quot;sql_bs_more\&quot;&quot;
     ]
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\coding\python\MovieRecommendation\static\images" />
+      <recent name="D:\coding\python\MovieRecommendation\recommendedAlgorithm\LFM\production" />
+      <recent name="D:\coding\python\MovieRecommendation\recommendedAlgorithm" />
       <recent name="D:\coding\python\MovieRecommendation" />
       <recent name="D:\a189a\IDE\BiSheServer\templates\page" />
-      <recent name="D:\a189a\IDE\BiSheServer" />
     </key>
   </component>
-  <component name="RunManager" selected="Django 服务器.BiSheServer">
-    <configuration name="movie_collectmoviedb.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
-      <script-file value="$PROJECT_DIR$/sql/movie_collectmoviedb.sql" />
+  <component name="RunManager" selected="Python.content_based">
+    <configuration name="dump-sql_bs_more-202304212109.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+      <script-file value="$PROJECT_DIR$/../../../2022下Courses/毕设/毕设系统数据库数据/backup_databases/dump-sql_bs_more-202304212109.sql" />
       <script-mode>FILE</script-mode>
-      <data-source id="58b27eb6-8325-491e-b40e-dfb3809bb082" />
-      <method v="2" />
-    </configuration>
-    <configuration name="movie_movietagdb.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
-      <script-file value="$PROJECT_DIR$/sql/movie_movietagdb.sql" />
-      <script-mode>FILE</script-mode>
-      <data-source id="58b27eb6-8325-491e-b40e-dfb3809bb082" />
-      <method v="2" />
-    </configuration>
-    <configuration name="other_sql.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
-      <script-file value="$PROJECT_DIR$/sql/other_sql.sql" />
-      <script-mode>FILE</script-mode>
-      <data-source id="58b27eb6-8325-491e-b40e-dfb3809bb082" />
+      <data-source id="01cb31b8-13ba-4f58-98c8-2dc102103491" namespace="schema/&quot;sql_bs_more&quot;" />
       <method v="2" />
     </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
@@ -189,20 +217,90 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="models" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="content_based" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="BiSheServer" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="BiSheServer.settings" />
       </envs>
-      <option name="SDK_HOME" value="D:\a189a\IDE\PycharmProjects\untitled\venv\Scripts\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/BiShe" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/recommendedAlgorithm/ContentBased/production" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/BiShe/models.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/recommendedAlgorithm/ContentBased/production/content_based.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="read_lfm" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="BiSheServer" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="BiSheServer.settings" />
+      </envs>
+      <option name="SDK_HOME" value="D:\coding\python_venv\BiSheServer-master\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/recommendedAlgorithm/ContentBased/util" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/recommendedAlgorithm/ContentBased/util/read.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test-collect" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="BiSheServer" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="BiSheServer.settings" />
+      </envs>
+      <option name="SDK_HOME" value="D:\coding\python_venv\BiSheServer-master\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/recommendedAlgorithm/LFM/utils_tool" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/recommendedAlgorithm/LFM/utils_tool/test-collect.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="train" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="BiSheServer" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="BiSheServer.settings" />
+      </envs>
+      <option name="SDK_HOME" value="D:\coding\python_venv\BiSheServer-master\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/recommendedAlgorithm/LFM/production" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/recommendedAlgorithm/LFM/production/train.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -219,7 +317,7 @@
         <env name="PYTHONUNBUFFERED" value="1" />
         <env name="DJANGO_SETTINGS_MODULE" value="BiSheServer.settings" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="D:\coding\python_venv\BiSheServer-master\Scripts\python.exe" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -237,17 +335,19 @@
     </configuration>
     <list>
       <item itemvalue="Django 服务器.BiSheServer" />
-      <item itemvalue="Python.models" />
-      <item itemvalue="数据库脚本.movie_collectmoviedb.sql" />
-      <item itemvalue="数据库脚本.movie_movietagdb.sql" />
-      <item itemvalue="数据库脚本.other_sql.sql" />
+      <item itemvalue="Python.content_based" />
+      <item itemvalue="Python.read_lfm" />
+      <item itemvalue="Python.test-collect" />
+      <item itemvalue="Python.train" />
+      <item itemvalue="数据库脚本.dump-sql_bs_more-202304212109.sql" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="数据库脚本.other_sql.sql" />
-        <item itemvalue="数据库脚本.movie_movietagdb.sql" />
-        <item itemvalue="数据库脚本.movie_collectmoviedb.sql" />
-        <item itemvalue="Python.models" />
+        <item itemvalue="Python.content_based" />
+        <item itemvalue="Python.read_lfm" />
+        <item itemvalue="数据库脚本.dump-sql_bs_more-202304212109.sql" />
+        <item itemvalue="Python.train" />
+        <item itemvalue="Python.test-collect" />
       </list>
     </recent_temporary>
   </component>
@@ -282,6 +382,64 @@
       <workItem from="1672476065807" duration="2118000" />
       <workItem from="1673071924260" duration="187000" />
       <workItem from="1673072133368" duration="10630000" />
+      <workItem from="1673103791534" duration="435000" />
+      <workItem from="1673163224293" duration="1923000" />
+      <workItem from="1673165168871" duration="1529000" />
+      <workItem from="1673494834542" duration="12372000" />
+      <workItem from="1674006305860" duration="630000" />
+      <workItem from="1675310790009" duration="34799000" />
+      <workItem from="1675473017735" duration="17443000" />
+      <workItem from="1675688541036" duration="32682000" />
+      <workItem from="1676106791419" duration="48821000" />
+      <workItem from="1676375795144" duration="7939000" />
+      <workItem from="1676514826007" duration="21002000" />
+      <workItem from="1676674430771" duration="27000" />
+      <workItem from="1676864927553" duration="4746000" />
+      <workItem from="1676959177681" duration="656000" />
+      <workItem from="1676961242601" duration="13390000" />
+      <workItem from="1677200601839" duration="1494000" />
+      <workItem from="1677371573256" duration="1289000" />
+      <workItem from="1677498126252" duration="604000" />
+      <workItem from="1677544114336" duration="29000" />
+      <workItem from="1677545960775" duration="1198000" />
+      <workItem from="1677572175172" duration="3293000" />
+      <workItem from="1677680272773" duration="605000" />
+      <workItem from="1678085301960" duration="2119000" />
+      <workItem from="1678597970380" duration="14967000" />
+      <workItem from="1679198784832" duration="657000" />
+      <workItem from="1679283731593" duration="481000" />
+      <workItem from="1679295862268" duration="18749000" />
+      <workItem from="1681133614024" duration="1916000" />
+      <workItem from="1681528439336" duration="1668000" />
+      <workItem from="1681786228283" duration="187000" />
+      <workItem from="1681786446909" duration="105000" />
+      <workItem from="1681877524878" duration="1077000" />
+      <workItem from="1681885113825" duration="2108000" />
+      <workItem from="1682050868228" duration="1650000" />
+      <workItem from="1682082210428" duration="932000" />
+      <workItem from="1682237702931" duration="1330000" />
+      <workItem from="1682239950814" duration="237000" />
+      <workItem from="1682240235258" duration="1002000" />
+      <workItem from="1682244669354" duration="48000" />
+      <workItem from="1682733617205" duration="68000" />
+      <workItem from="1682734799274" duration="2709000" />
+      <workItem from="1682744168739" duration="2937000" />
+      <workItem from="1682817016744" duration="5977000" />
+      <workItem from="1682903961591" duration="2743000" />
+      <workItem from="1683115752324" duration="1198000" />
+      <workItem from="1683165748012" duration="5700000" />
+      <workItem from="1683360124857" duration="332000" />
+      <workItem from="1683436500305" duration="4098000" />
+      <workItem from="1683535173631" duration="5300000" />
+      <workItem from="1683644045208" duration="2384000" />
+      <workItem from="1683682042313" duration="9489000" />
+      <workItem from="1684126029191" duration="2355000" />
+      <workItem from="1684202890919" duration="726000" />
+      <workItem from="1684764449054" duration="2431000" />
+      <workItem from="1684804574615" duration="1693000" />
+      <workItem from="1684852429952" duration="2272000" />
+      <workItem from="1684888006453" duration="6840000" />
+      <workItem from="1685018594862" duration="1008000" />
     </task>
     <task id="LOCAL-00001" summary="第一次提交">
       <created>1616917500894</created>
@@ -339,7 +497,98 @@
       <option name="project" value="LOCAL" />
       <updated>1671719582856</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="尝试debug">
+      <created>1673103876595</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1673103876595</updated>
+    </task>
+    <task id="LOCAL-00010" summary="test">
+      <created>1673104205650</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1673104205650</updated>
+    </task>
+    <task id="LOCAL-00011" summary="将主页的电影显示的标签显示修改为时间、语言、国家；">
+      <created>1675394139505</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1675394139505</updated>
+    </task>
+    <task id="LOCAL-00012" summary="最新电影TopN随机显示，高分电影top250，随机显示">
+      <created>1675753072306</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1675753072306</updated>
+    </task>
+    <task id="LOCAL-00013" summary="最新电影TopN随机显示，高分电影top250，随机显示">
+      <created>1675753159278</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1675753159278</updated>
+    </task>
+    <task id="LOCAL-00014" summary="数据更改为数据库连接">
+      <created>1676175834443</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1676175834443</updated>
+    </task>
+    <task id="LOCAL-00015" summary="could run but need to add something">
+      <created>1676183292583</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1676183292583</updated>
+    </task>
+    <task id="LOCAL-00016" summary="基于内容的推荐，可以展示">
+      <created>1676203181936</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1676203181936</updated>
+    </task>
+    <task id="LOCAL-00017" summary="基于内容的推荐完成（未保存中间结果，导致性能较差）">
+      <created>1676292956437</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1676292956437</updated>
+    </task>
+    <task id="LOCAL-00018" summary="基于内容的推荐完成（未保存中间结果，导致性能较差）">
+      <created>1676293067053</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1676293067053</updated>
+    </task>
+    <task id="LOCAL-00019" summary="lfm与CB混合推荐（基本可以运行）">
+      <created>1676987606361</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1676987606361</updated>
+    </task>
+    <task id="LOCAL-00020" summary="修改必须使用spark生成的数据，然后才进行基于用户对象的推荐">
+      <created>1679320094035</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1679320094035</updated>
+    </task>
+    <task id="LOCAL-00021" summary="已更新至最新">
+      <created>1682083003408</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1682083003408</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -425,27 +674,161 @@
     <MESSAGE value="第一次提交" />
     <MESSAGE value="Default Changelist" />
     <MESSAGE value="Ignore changelist" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ignore changelist" />
+    <MESSAGE value="尝试debug" />
+    <MESSAGE value="test" />
+    <MESSAGE value="将主页的电影显示的标签显示修改为时间、语言、国家；" />
+    <MESSAGE value="最新电影TopN随机显示，高分电影top250，随机显示" />
+    <MESSAGE value="数据更改为数据库连接" />
+    <MESSAGE value="could run but need to add something" />
+    <MESSAGE value="基于内容的推荐，可以展示" />
+    <MESSAGE value="基于内容的推荐完成（未保存中间结果，导致性能较差）" />
+    <MESSAGE value="lfm与CB混合推荐（基本可以运行）" />
+    <MESSAGE value="修改必须使用spark生成的数据，然后才进行基于用户对象的推荐" />
+    <MESSAGE value="已更新至最新" />
+    <option name="LAST_COMMIT_MESSAGE" value="已更新至最新" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/api/movie_api.py</url>
-          <line>500</line>
-          <option name="timeStamp" value="1" />
+          <url>file://$PROJECT_DIR$/recommendedAlgorithm/ContentBased/util/read.py</url>
+          <line>43</line>
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/api/movie_api.py</url>
-          <line>518</line>
-          <option name="timeStamp" value="3" />
+          <url>file://$PROJECT_DIR$/recommendedAlgorithm/LFM/production/train.py</url>
+          <line>87</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/recommendedAlgorithm/LFM/production/train.py</url>
+          <line>86</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/recommendedAlgorithm/LFM/production/train.py</url>
+          <line>84</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/recommendedAlgorithm/ContentBased/util/read.py</url>
+          <line>114</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/recommendedAlgorithm/ContentBased/production/content_based.py</url>
+          <line>64</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/recommendedAlgorithm/ContentBased/production/content_based.py</url>
+          <line>31</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/recommendedAlgorithm/LFM/production/train.py</url>
+          <line>57</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/recommendedAlgorithm/ContentBased/production/content_based.py</url>
+          <line>32</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/recommendedAlgorithm/LFM/production/train.py</url>
+          <line>37</line>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/recommendedAlgorithm/LFM/production/train.py</url>
+          <line>114</line>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/recommendedAlgorithm/LFM/production/train.py</url>
+          <line>39</line>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/recommendedAlgorithm/LFM/production/train.py</url>
+          <line>30</line>
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/BiShe/views.py</url>
+          <line>293</line>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/BiShe/views.py</url>
+          <line>59</line>
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/BiShe/views.py</url>
+          <line>60</line>
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/movie/views.py</url>
+          <line>69</line>
+          <option name="timeStamp" value="62" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/recommendedAlgorithm/ContentBased/util/read.py</url>
+          <line>113</line>
+          <option name="timeStamp" value="63" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/recommendedAlgorithm/ContentBased/production/content_based.py</url>
+          <line>117</line>
+          <option name="timeStamp" value="64" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/recommendedAlgorithm/ContentBased/production/content_based.py</url>
+          <line>116</line>
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/recommendedAlgorithm/ContentBased/production/content_based.py</url>
+          <line>127</line>
+          <option name="timeStamp" value="67" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/BiShe/views.py</url>
+          <line>304</line>
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/BiShe/views.py</url>
+          <line>52</line>
+          <option name="timeStamp" value="69" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/BiShe/views.py</url>
+          <line>145</line>
+          <option name="timeStamp" value="70" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="cate_item_sort['犯罪']" />
+        <watch expression="result" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/MovieRecommendation$read_lfm.coverage" NAME="read_lfm 覆盖结果" MODIFIED="1684853346929" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/recommendedAlgorithm/ContentBased/util" />
+    <SUITE FILE_PATH="coverage/MovieRecommendation$read__1_.coverage" NAME="read 覆盖结果" MODIFIED="1676129785550" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/recommendedAlgorithm/LFM/utils_tool" />
+    <SUITE FILE_PATH="coverage/MovieRecommendation$train.coverage" NAME="train 覆盖结果" MODIFIED="1676981764553" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/recommendedAlgorithm/LFM/production" />
+    <SUITE FILE_PATH="coverage/MovieRecommendation$test_collect.coverage" NAME="test-collect 覆盖结果" MODIFIED="1676128644488" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/recommendedAlgorithm/LFM/utils_tool" />
+    <SUITE FILE_PATH="coverage/MovieRecommendation$spark.coverage" NAME="spark 覆盖结果" MODIFIED="1675567830372" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/spark" />
+    <SUITE FILE_PATH="coverage/MovieRecommendation$read.coverage" NAME="read_lfm 覆盖结果" MODIFIED="1676131227939" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/recommendedAlgorithm/ContentBased/util" />
     <SUITE FILE_PATH="coverage/BiSheServer$models.coverage" NAME="models Coverage Results" MODIFIED="1616398306052" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/BiShe" />
+    <SUITE FILE_PATH="coverage/MovieRecommendation$content_based.coverage" NAME="content_based 覆盖结果" MODIFIED="1685018848195" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/recommendedAlgorithm/ContentBased/production" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/db.sqlite3" />

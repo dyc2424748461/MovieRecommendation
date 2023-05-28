@@ -43,7 +43,7 @@ class ContentBase:
             if itemid not in item_cate:
                 continue
             time_score=self.get_time_score(timestamp)
-            print('timeScor'+str(time_score))
+            # print('timeScor'+str(time_score))
             if userid not in record:
                 record[userid]={}
             for cate in item_cate[itemid]:
@@ -99,20 +99,33 @@ class ContentBase:
             num=int(topK*ratio)+1
             if cate not in cate_item_sort:
                 continue
+            # print(cate_item_sort[cate][:topN])
+            if len(cate_item_sort[cate][:topN])<num:
+                recom_result[userid]+=cate_item_sort[cate][:topN]
+                continue
             recom_list=random.sample(cate_item_sort[cate][:topN],num)
-            print('in+_'+str(recom_list))
+            # print('in+_'+str(recom_list))
             recom_result[userid]+=recom_list
-        recom_result[userid] = recom_result[userid][:topK]
+        if len(recom_result[userid])<topK:
+            return {}
+        recom_result[userid] = random.sample(recom_result[userid],topK)
+        # print(len(recom_result))
         return recom_result
 
     def run_main(self,):
         ave_score=read.get_ave_score()
-        item_cate,cate_item_sort=read.get_item_cate(ave_score)
+        item_cate,cate_item_sort=read.get_item_cate(ave_score)#物品-各类别占比、类别-物品排序
+        # result = [key for key, value in cate_item_sort.items() if len(list(value)) == 1]
+
+        # print(result)  # 输出：['a', 'c', 'e']
         #print(item_cate)
         #print(cate_item_sort)
         up=self.get_up(item_cate)
-        print(len(up))
+        up = {3:[('我的2009十佳',1)]}
+        # print("长度：")
+        # print(len(up))
         print(self.recom(cate_item_sort,up,self.user_id))
+        test=self.recom(cate_item_sort,up,self.user_id)
         return self.recom(cate_item_sort,up,self.user_id)
 
 if __name__=="__main__":

@@ -30,10 +30,10 @@ class Calculator:
         # self.sqlContext = SparkSession.Builder().appName('sql').master('spark://Spark:7077').getOrCreate()
 
         # mysql 配置
-        self.prop = {'user': 'root',
-                     'password': 'root',
+        self.prop = {'user': 'bs',
+                     'password': '123456',
                      'driver': 'com.mysql.cj.jdbc.Driver'}
-        self.jdbcURL = "jdbc:mysql://192.168.1.106:3306/sql_bs" \
+        self.jdbcURL = "jdbc:mysql://192.168.1.106:3306/sql_bs_more" \
                        "?useUnicode=true&characterEncoding=utf-8&useSSL=false"
 
         #  user\rating\links\tags在hdfs中的位置 ===> 即推荐原料在hdfs中的存档路径
